@@ -40,18 +40,18 @@ function LeaderboardChiefs({ data }) {
   })).sort((a, b) => b.points - a.points);
 
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-center mb-6">Chiefs Leaderboard</h2>
-      {sortedChiefsUsers.map((user, index) => (
-        <div key={index} className="flex items-center mb-4 bg-white p-4 rounded-lg shadow">
-          <img src={user.profileImage} alt="Profile" className="w-16 h-16 rounded-full mr-4" />
-          <div>
-            <h3 className="text-xl font-semibold">{user.displayName}</h3>
-            <p className="text-gray-600">{`@${user.username} - ${user.points} Points`}</p>
-          </div>
+    <div className="max-h-[80vh] overflow-y-auto">
+    <h2 className="text-3xl font-bold text-center mb-6 sticky top-0 bg-white py-2">Chiefs Leaderboard</h2>
+    {sortedChiefsUsers.map((user, index) => (
+      <div key={index} className="flex items-center mb-4 bg-white p-4 rounded-lg shadow">
+        <img src={user.profileImage} alt="Profile" className="w-16 h-16 rounded-full mr-4" />
+        <div>
+          <h3 className="text-xl font-semibold">{user.displayName}</h3>
+          <p className="text-gray-600">{`@${user.username} - ${user.points} Points`}</p>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
   );
 }
 
