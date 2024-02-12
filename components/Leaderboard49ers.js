@@ -48,6 +48,7 @@ function Leaderboard49ers({ data }) {
         <div>
           <h3 className="text-xl font-semibold">{user.displayName}</h3>
           <p className="text-gray-600">{`@${user.username} - ${user.points} Points`}</p>
+          <p className="text-red-600">loser</p>
         </div>
       </div>
     ))}
